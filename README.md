@@ -1,0 +1,2 @@
+# cblocklist
+chrome block list
