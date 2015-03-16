@@ -1,2 +1,2 @@
 # cblocklist
-chrome block list
+chrome blacklist extension
