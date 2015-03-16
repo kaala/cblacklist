@@ -1,0 +1,23 @@
+{
+    "name": "AnotherBlockList",
+    "version": "1.1.1",
+    "description": "Another blacklist add-on, remove unwanted contents",
+    "icons": { 
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png" 
+    },
+    "permissions": [
+        "*://*/",
+        "storage",
+        "webRequest", 
+        "webRequestBlocking"
+    ],
+    "background": {
+        "scripts": [
+            "main.js"
+        ]
+    },
+    "options_page": "options.html",
+    "manifest_version": 2
+}
