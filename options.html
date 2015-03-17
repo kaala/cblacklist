@@ -4,18 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>AnotherBlockList</title>
-    <style>
-        form * {
-            display: block
-        }
-    </style>
 </head>
 
+<style>
+    #panel {
+        margin: 0px auto;
+        width: 500px;
+        height: 100%
+    }
+    #reload {
+        display: block;
+        margin: 5px 0px;
+        padding: 5px 10px;
+        font: bold 1em monospace;
+    }
+    #text {
+        display: block;
+        margin: 0px;
+        resize: vertical;
+        font: normal 1em monospace;
+    }
+</style>
+
 <body>
-    <form action="">
+    <div id="panel">
         <button id="reload">RELOAD</button>
-        <textarea name="text" id="text" cols="80" rows="30" style="resize:none"></textarea>
-    </form>
+        <textarea name="text" id="text" cols="60" rows="30"></textarea>
+    </div>
 </body>
 <script src="options.js"></script>
 
