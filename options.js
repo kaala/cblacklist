@@ -18,25 +18,25 @@ function save() {
 }
 
 function restore() {
-    storage.get(null, function(items) {
-        console.log(items);
-        var keys = Object.keys(items);
-        for (idx in keys) {
-            var key = keys[idx];
-            var value = items[key];
-            var dom = el(key);
-            if (dom) {
-                dom.value = value;
+    storage.get(
+        null,
+        function(items) {
+            console.log(items);
+            var keys = Object.keys(items);
+            for (idx in keys) {
+                var key = keys[idx];
+                var value = items[key];
+                var dom = el(key);
+                if (dom) {
+                    dom.value = value;
+                }
             }
         }
-    });
+    );
 }
 
-document.addEventListener('DOMContentLoaded', restore);
-el('text').addEventListener('blur', save);
-
 function reload() {
-    runtime.reload();
+    runtime.sendMessage({});
 }
 
 function reset() {
@@ -44,4 +44,9 @@ function reset() {
     window.location = window.location;
 }
 
+document.addEventListener('DOMContentLoaded', restore);
+el('text').addEventListener('blur', save);
+el('text').addEventListener('blur', reload);
+
+el('reset').addEventListener('click', reset);
 el('reload').addEventListener('click', reload);
