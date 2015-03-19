@@ -12,13 +12,13 @@
         width: 500px;
         height: 100%
     }
-    #reload {
-        display: block;
+    button {
+        display: inline-block;
         margin: 5px 0px;
         padding: 5px 10px;
         font: bold 1em monospace;
     }
-    #text {
+    textarea {
         display: block;
         margin: 0px;
         resize: vertical;
@@ -29,9 +29,12 @@
 <body>
     <div id="panel">
         <button id="reload">RELOAD</button>
+        <button id="reset">RESET</button>
         <textarea name="text" id="text" cols="60" rows="30"></textarea>
     </div>
+
 </body>
+
 <script src="options.js"></script>
 
 </html>

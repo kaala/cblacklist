@@ -29,18 +29,26 @@ function convertListToRegExp(text) {
 }
 
 var opts = {};
+opts.enabled = true;
 opts.blacklist = [];
 
-chrome.storage.sync.get(
-    null,
-    function(items) {
-        var text = items.text;
-        opts.blacklist = convertListToRegExp(text);
-    }
-);
+function readList() {
+    chrome.storage.sync.get(
+        null,
+        function(items) {
+            var text = items.text;
+            opts.blacklist = convertListToRegExp(text);
+        }
+    );
+}
 
 chrome.webRequest.onBeforeRequest.addListener(
     function(info) {
+        if (!opts.enabled) {
+            return {
+                cancel: false
+            }
+        }
         var url = info.url;
         var blacklist = opts.blacklist;
         if (isUrlInsideList(url, blacklist)) {
@@ -59,4 +67,16 @@ chrome.webRequest.onBeforeRequest.addListener(
     }, [
         "blocking"
     ]
+);
+
+chrome.runtime.onInstalled.addListener(
+    function(object) {
+        readList();
+    }
+);
+
+chrome.runtime.onMessage.addListener(
+    function(message, sender, sendResponse) {
+        readList();
+    }
 );
