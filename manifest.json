@@ -1,8 +1,8 @@
 {
-    "name": "AnotherBlockList",
-    "version": "1.1.3",
+    "name": "AnotherBlackList",
+    "version": "1.1.5",
     "description": "Another blacklist add-on, remove unwanted contents",
-    "homepage_url": "https://github.com/kaala/cblocklist",
+    "homepage_url": "https://github.com/kaala/cblacklist",
     "icons": {
         "16": "icon16.png",
         "48": "icon48.png",
