@@ -45,8 +45,8 @@ function reset() {
 }
 
 document.addEventListener('DOMContentLoaded', restore);
-el('text').addEventListener('blur', save);
-el('text').addEventListener('blur', reload);
+el('fp').addEventListener('blur', save);
+el('fp').addEventListener('blur', reload);
 
 el('reset').addEventListener('click', reset);
 el('reload').addEventListener('click', reload);

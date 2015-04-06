@@ -33,13 +33,24 @@ opts.enabled = true;
 opts.blacklist = [];
 
 function readList() {
+    opts.blacklist = [];
     chrome.storage.sync.get(
         null,
         function(items) {
-            var text = items.text;
-            opts.blacklist = convertListToRegExp(text);
+            var fp = items.fp;
+            if (fp) {
+                var oReq = new XMLHttpRequest();
+                oReq.onload = function() {
+                    var text = this.responseText;
+                    console.log(text);
+                    opts.blacklist = convertListToRegExp(text);
+                };
+                oReq.open("get", fp, true);
+                oReq.send();
+            }
         }
     );
+
 }
 
 chrome.webRequest.onBeforeRequest.addListener(

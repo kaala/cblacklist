@@ -1,6 +1,6 @@
 {
     "name": "AnotherBlackList",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "Another blacklist add-on, remove unwanted contents",
     "homepage_url": "https://github.com/kaala/cblacklist",
     "icons": {
@@ -9,7 +9,9 @@
         "128": "icon128.png"
     },
     "permissions": [
-        "*://*/",
+        "file:///",
+        "http://*/",
+        "https://*/",
         "storage",
         "webRequest",
         "webRequestBlocking"
