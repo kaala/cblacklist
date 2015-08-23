@@ -80,14 +80,10 @@ chrome.webRequest.onBeforeRequest.addListener(
     ]
 );
 
-chrome.runtime.onInstalled.addListener(
-    function(object) {
-        readList();
-    }
-);
-
 chrome.runtime.onMessage.addListener(
     function(message, sender, sendResponse) {
         readList();
     }
 );
+
+readList();
