@@ -24,21 +24,23 @@
         width: 90%;
         font: normal 1em monospace;
     }
-    p {
+    textarea {
+        display: block;
+        margin: 0px;
+        width: 100%;
+        height: 320px;
+        resize: none;
         font: normal 1em monospace;
     }
 </style>
 
 <body>
+
     <div id="panel">
         <button id="reload">RELOAD</button>
         <button id="reset">RESET</button>
-        <input type="text" id="fp">
-        <p>
-            please allow for file url access.
-        </p>
+        <textarea id="fp"></textarea>
     </div>
-
 
 </body>
 
